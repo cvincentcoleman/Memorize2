@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    let vehicalEmojis =  ["🚗","🚕","🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒","🚐","🛻","🚚", "🚛" ,"🚜"]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Memorize")
+            LazyVGrid(columns: [GridItem(),GridItem(),GridItem()]) {
+                ForEach( vehicalEmojis, id: \.self) { emoji in
+                    Text(emoji)
+                }
+            }
+        }
+        
+    }
+}
+
+struct CardView: View {
+    var body: some View {
+        Text("Test")
     }
 }
 
